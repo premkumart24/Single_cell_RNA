@@ -16,7 +16,7 @@ rename_map = {
 # Loop through all files in the current folder
 for fname in os.listdir(source_dir):
     if fname.endswith(".gz"):  # only process .gz files
-        gsm_id = fname.split("_")[0]  # e.g. GSM12345 from GSM12345_...
+        gsm_id = fname.split("_")[0]  
         
         # Create GSM subfolder inside organized/
         gsm_folder = os.path.join(target_dir, gsm_id)
@@ -38,4 +38,4 @@ for fname in os.listdir(source_dir):
         shutil.copy(src_path, dest_path)  # use move() if you don’t want to keep originals
         print(f"Moved {fname} → {gsm_folder}/{new_name}")
 
-print("✅ All files organized and renamed inside:", target_dir)
+print("All files organized and renamed inside:", target_dir)
